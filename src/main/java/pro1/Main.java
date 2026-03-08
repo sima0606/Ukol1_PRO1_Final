@@ -45,10 +45,6 @@ public class Main {
 
             for (String line : lines) {
                 if (line.trim().isEmpty()) continue;
-
-                // TADY JE OPRAVA:
-                // Rozdělí řádek na první nalezené čárce, středníku, rovnítku nebo dvojtečce.
-                // Číslo 2 na konci zajišťuje, že to jméno a výraz rozdělí na přesně 2 části.
                 String[] parts = line.split("[;=:,]", 2);
                 if (parts.length < 2) continue;
 
@@ -96,8 +92,7 @@ public class Main {
 
             Path outputFile = outputDir.resolve(inputFile.getFileName());
             Files.write(outputFile, processedLines);
-            // System.out.println("Úspěšně zpracován soubor: " + inputFile.getFileName()); // Zakomentováno, ať ti to nespamuje 2500 zpráv
-
+            // System.out.println("Úspěšně zpracován soubor: " + inputFile.getFileName());
         } catch (IOException e) {
             System.err.println("Nepodařilo se zpracovat soubor: " + inputFile.getFileName());
         }
