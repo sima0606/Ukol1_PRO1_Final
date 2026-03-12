@@ -1,1 +1,2 @@
-Šimon Polák
+Šimon Polák  
+Hodnocení: V pořádku  
